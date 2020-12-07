@@ -20,6 +20,9 @@
         <e p="02_Records" t="Include">
           <e p="RecordsTests.cs" t="Include" />
         </e>
+        <e p="03_PatternMatching" t="Include">
+          <e p="PatternMatchingTests.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="LanguageFeatures.LearningTests.csproj" t="IncludeRecursive" />
         <e p="LanguageFeatures.LearningTests.csproj.DotSettings" t="Include" />

@@ -87,7 +87,7 @@ namespace LanguageFeatures.LearningTests
             FontSettingsEqual(defaultSettings, extendedSettings).Should().BeFalse();
             FontSettingsEqual(extendedSettings, defaultSettings).Should().BeFalse();
 
-            bool FontSettingsEqual(FontSettings left, FontSettings right) 
+            static bool FontSettingsEqual(FontSettings left, FontSettings right) 
                 => left.Equals(right);
         }
         */
