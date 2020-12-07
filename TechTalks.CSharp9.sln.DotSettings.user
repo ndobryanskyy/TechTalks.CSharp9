@@ -1,8 +1,16 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f0bce785_002D1d15_002D4324_002D97c7_002D18755806617c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.UnitTest1.Should_Not_Be_Able_To_Create_Uninitialized_Person&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.UnitTest1.HomeTown_Can_Not_Be_Changed&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.UnitTest1.Home_Town_Cannot_Be_Empty_Or_Whitespace&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.InitSetterTests.Cannot_Be_Created_Uninitialized&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.InitSetterTests.HomeTown_Can_Not_Be_Changed&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.InitSetterTests.GunPower_Should_Only_Be_Between_0_And_1000&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.InitSetterTests.ManufacturerName_Should_Be_In_Robot_Name_IfPresent&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.InitSetterTests.Can_Change_GunPower_Of_Juggernaut&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.RecordTests.Books_Should_Be_Equal_By_Content&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.RecordTests.Deconstruct_Is_Implemented_For_Free&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.RecordTests.With_Operator_Is_Supported&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.RecordTests.Prototype&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.InitSetterTests.Should_Be_Politically_Correct&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9A3102C4-FA6E-401F-808D-9C7BEA23092F::net5.0::LanguageFeatures.LearningTests.InitSetterTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
