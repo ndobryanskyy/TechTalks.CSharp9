@@ -7,13 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37dba4a0-67e6-4790-8f90-a32a009f8280" name="Default Changelist" comment="Add init properties tests">
-      <change afterPath="$PROJECT_DIR$/LanguageFeatures.LearningTests/01_InitSetter/WhitespaceCharacter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LanguageFeatures.LearningTests/02_Records/RecordsTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LanguageFeatures.LearningTests/LanguageFeatures.LearningTests.csproj.DotSettings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TechTalks.CSharp9/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechTalks.CSharp9/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="37dba4a0-67e6-4790-8f90-a32a009f8280" name="Default Changelist" comment="Refactor init tests">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TechTalks.CSharp9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechTalks.CSharp9/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanguageFeatures.LearningTests/InitPropertiesTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanguageFeatures.LearningTests/01_InitSetter/InitSetterTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanguageFeatures.LearningTests/02_Records/RecordsTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanguageFeatures.LearningTests/02_Records/RecordsTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TechTalks.CSharp9.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/TechTalks.CSharp9.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +22,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3DD31A3-D437-4D7D-9525-D887480DAE95/8F/Index.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3DD31A3-D437-4D7D-9525-D887480DAE95/43/Type.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/949E8B9F-3E7E-445B-940E-CB90C8734B13/1B/RequiredAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A0412AAE-7EC3-443E-A187-1067E34821E0/4/Point.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -71,7 +69,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="RiderUnitTestingPageId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.SampleWebApp">
@@ -114,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607257832439</updated>
-      <workItem from="1607257835762" duration="36693000" />
+      <workItem from="1607257835762" duration="45608000" />
     </task>
     <task id="LOCAL-00001" summary="Add init properties tests">
       <created>1607277737922</created>
@@ -123,11 +121,44 @@
       <option name="project" value="LOCAL" />
       <updated>1607277737922</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactor init tests">
+      <created>1607358960688</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607358960688</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="234" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 27% 19/26" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 27% 19/26" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="LanguageFeatures.LearningTests 27% 19/26" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 27% 19/26" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="LanguageFeatures.LearningTests 27% 19/26" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="LanguageFeatures.LearningTests 27% 19/26" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -143,6 +174,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Add init properties tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add init properties tests" />
+    <MESSAGE value="Refactor init tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor init tests" />
   </component>
 </project>
