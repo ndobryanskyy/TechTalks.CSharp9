@@ -42,7 +42,7 @@ namespace LanguageFeatures.LearningTests
         {
             var settings = new FontSettings(
                 Family: "Consolas",
-                16)
+                Size: 16)
             {
                 Size = 24
             };

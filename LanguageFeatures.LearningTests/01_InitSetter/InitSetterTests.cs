@@ -1,3 +1,5 @@
+using FluentAssertions;
+using System;
 using Xunit;
 
 namespace LanguageFeatures.LearningTests
@@ -25,7 +27,7 @@ namespace LanguageFeatures.LearningTests
                 FontSize = 18
             };
 
-            settings.WhitespaceCharacter.Should().Be(WhitespaceCharacter.Tab);
+            settings.WhitespaceCharacter.Should().Be(WhitespaceCharacter.Space);
             settings.FontFamily.Should().Be("Fira Code");
             settings.FontSize.Should().Be(18);
         }
@@ -62,7 +64,7 @@ namespace LanguageFeatures.LearningTests
         }
         */
         
-        /* VisualStudioSettings
+        /* VisualStudioSettings 125
         [Fact]
         public void Can_Change_VisualStudio_Defaults()
         {
