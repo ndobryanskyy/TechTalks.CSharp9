@@ -8,13 +8,13 @@ namespace LanguageFeatures.LearningTests
 {
     public class FontSettings
     {
-        public FontSettings(string face, int size)
+        public FontSettings(string family, int size)
         {
-            Face = face;
+            Family = family;
             Size = size;
         }
 
-        public string Face { get; }
+        public string Family { get; }
 
         public int Size { get; }
     }
