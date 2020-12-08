@@ -21,16 +21,13 @@ namespace LanguageFeatures.LearningTests
 
     public sealed class RecordsTests
     {
-        private static FontSettings ArialDefault { get; } 
-            = new FontSettings("Arial", 16);
-        
         /* Equality
         [Fact]
         public void Instances_With_Equal_Values_Should_Be_Equal()
         {
-            var settings = ArialDefault;
+            var settings = DefaultFonts.Consolas;
 
-            var identicalSettings = new FontSettings("Arial", 16);
+            var identicalSettings = new FontSettings("Consolas", 16);
             
             settings.Should().BeAssignableTo<IEquatable<FontSettings>>();
             
@@ -44,7 +41,7 @@ namespace LanguageFeatures.LearningTests
         public void Positional_Properties_Should_Be_Synthesized_As_Get_Init()
         {
             var settings = new FontSettings(
-                Family: "Arial",
+                Family: "Consolas",
                 16)
             {
                 Size = 24
@@ -58,37 +55,37 @@ namespace LanguageFeatures.LearningTests
         [Fact]
         public void Should_Have_Synthesize_ToString_Printing_All_Public_Members()
         {
-            var settings = ArialDefault;
+            var settings = DefaultFonts.Consolas;
 
-            settings.ToString().Should().Be($"{nameof(FontSettings)} {{ Family = Arial, Size = 16 }}");
+            settings.ToString().Should().Be($"{nameof(FontSettings)} {{ Family = Consolas, Size = 16 }}");
         }
         */
 
-        /* Destructor
+        /* Deconstructor
         [Fact]
         public void Should_Have_Synthesized_Destructor()
         {
-            var settings = ArialDefault;
+            var settings = DefaultFonts.Consolas;
 
             var (fontFamily, fontSize) = settings;
 
-            fontFamily.Should().Be("Arial");
+            fontFamily.Should().Be("Consolas");
             fontSize.Should().Be(16);
         }
         */
 
-        /* Derived_Types
+        /* Derived Types
         [Fact]
         public void Synthesized_Equals_Implementation_Considers_Only_Records_Of_Same_Type_Equal()
         {
-            var defaultSettings = new FontSettings("Arial", 16);
-            var extendedSettings = new ExtendedFontSettings("Arial", 16);
+            static bool FontSettingsEqual(FontSettings left, FontSettings right) 
+                => left.Equals(right);
+        
+            var defaultSettings = new FontSettings("Consolas", 16);
+            var extendedSettings = new ExtendedFontSettings("Consolas", 16);
 
             FontSettingsEqual(defaultSettings, extendedSettings).Should().BeFalse();
             FontSettingsEqual(extendedSettings, defaultSettings).Should().BeFalse();
-
-            static bool FontSettingsEqual(FontSettings left, FontSettings right) 
-                => left.Equals(right);
         }
         */
 
@@ -96,20 +93,20 @@ namespace LanguageFeatures.LearningTests
         [Fact]
         public void Should_Support_Special_Non_Destructive_Copy_With_Expression()
         {
-            var arialDefault = new ExtendedFontSettings("Arial", 16);
+            var consolasDefault = new ExtendedFontSettings("Consolas", 16);
 
-            var italicEnlargedArial = arialDefault with 
+            var italicEnlargedConsolas = consolasDefault with 
             {
                 Size = 20,
                 IsItalic = true
             };
 
-            italicEnlargedArial.Family.Should().Be("Arial");
-            italicEnlargedArial.Size.Should().Be(20);
-            italicEnlargedArial.IsItalic.Should().BeTrue();
+            italicEnlargedConsolas.Family.Should().Be("Consolas");
+            italicEnlargedConsolas.Size.Should().Be(20);
+            italicEnlargedConsolas.IsItalic.Should().BeTrue();
             
-            arialDefault.Size.Should().Be(16);
-            arialDefault.IsItalic.Should().BeFalse();
+            consolasDefault.Size.Should().Be(16);
+            consolasDefault.IsItalic.Should().BeFalse();
         }
         */
 
@@ -117,21 +114,21 @@ namespace LanguageFeatures.LearningTests
         [Fact]
         public void System_Text_Json_Can_Serialize_And_Deserialize_Records()
         {
-            var serializedSettings = JsonSerializer.Serialize(ArialDefault);
-            serializedSettings.Should().Be(@"{""Family"":""Arial"",""Size"":16}");
+            var serializedSettings = JsonSerializer.Serialize(DefaultFonts.Consolas);
+            serializedSettings.Should().Be(@"{""Family"":""Consolas"",""Size"":16}");
 
             var deserializedSettings = JsonSerializer.Deserialize<FontSettings>(serializedSettings);
-            deserializedSettings.Should().Be(ArialDefault);
+            deserializedSettings.Should().Be(DefaultFonts.Consolas);
         }
         
         [Fact]
         public void Newtonsoft_Json_Can_Serialize_And_Deserialize_Records()
         {
-            var serializedSettings = JsonConvert.SerializeObject(ArialDefault);
-            serializedSettings.Should().Be(@"{""Family"":""Arial"",""Size"":16}");
+            var serializedSettings = JsonConvert.SerializeObject(DefaultFonts.Consolas);
+            serializedSettings.Should().Be(@"{""Family"":""Consolas"",""Size"":16}");
 
             var deserializedSettings = JsonConvert.DeserializeObject<FontSettings>(serializedSettings);
-            deserializedSettings.Should().Be(ArialDefault);
+            deserializedSettings.Should().Be(DefaultFonts.Consolas);
         }
         */
     }
