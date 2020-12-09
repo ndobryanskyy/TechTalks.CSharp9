@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FluentAssertions;
 using Newtonsoft.Json;
 using Xunit;
@@ -47,17 +48,7 @@ namespace LanguageFeatures.LearningTests
                 Size = 24
             };
 
-            settings.Size.Should().Be(24);
-        }
-        */
-        
-        /* ToString
-        [Fact]
-        public void Should_Have_Synthesize_ToString_Printing_All_Public_Members()
-        {
-            var settings = DefaultFonts.Consolas;
-
-            settings.ToString().Should().Be($"{nameof(FontSettings)} {{ Family = Consolas, Size = 16 }}");
+            settings.Size.Should().Be(16);
         }
         */
 
@@ -73,8 +64,39 @@ namespace LanguageFeatures.LearningTests
             fontSize.Should().Be(16);
         }
         */
+        
+        /* ToString
+        [Fact]
+        public void Should_Have_Synthesize_ToString_Printing_All_Public_Members()
+        {
+            var settings = DefaultFonts.Consolas;
 
-        /* Derived Types
+            settings.ToString().Should().Be("FontSettings { Family = Consolas, Size = 16 }");
+        }
+        */
+
+        /* Derived Types: ExtendedFontSettings IsItalic
+        [Fact]
+        public void Derived_Type_Should_Extend_Base_ToString_And_Deconstructor()
+        {
+            var extendedSettings = new ExtendedFontSettings(
+                Family: "Consolas",
+                Size: 16,
+                IsItalic: true);
+
+            var (familyFromBase, sizeFromBase) = extendedSettings;
+            var (family, size, isItalic) = extendedSettings;
+
+            family.Should().Be(familyFromBase).And.Be("Consolas");
+            size.Should().Be(sizeFromBase).And.Be(16);
+            isItalic.Should().BeTrue();
+
+            extendedSettings.ToString()
+                .Should().Be("ExtendedFontSettings { Family = Consolas, Size = 16, IsItalic = True }");
+        }
+        */
+        
+        /* Derived Types: Equality
         [Fact]
         public void Synthesized_Equals_Implementation_Considers_Only_Records_Of_Same_Type_Equal()
         {
@@ -82,8 +104,13 @@ namespace LanguageFeatures.LearningTests
                 => left.Equals(right);
         
             var defaultSettings = new FontSettings("Consolas", 16);
+            
             var extendedSettings = new ExtendedFontSettings("Consolas", 16);
+            var identicalExtendedSettings = new ExtendedFontSettings("Consolas", 16);
 
+            extendedSettings.Equals(identicalExtendedSettings).Should().BeTrue();
+            (extendedSettings == identicalExtendedSettings).Should().BeTrue();
+            
             FontSettingsEqual(defaultSettings, extendedSettings).Should().BeFalse();
             FontSettingsEqual(extendedSettings, defaultSettings).Should().BeFalse();
         }
@@ -107,6 +134,60 @@ namespace LanguageFeatures.LearningTests
             
             consolasDefault.Size.Should().Be(16);
             consolasDefault.IsItalic.Should().BeFalse();
+        }
+        */
+
+        /* Shallow Equals: AuthoredFontSettings Authors
+        [Fact]
+        public void Equality_Comparison_Is_Shallow()
+        {
+            var authoredFontSettings = new AuthoredFontSettings("JoJa", 16)
+            {
+                Authors = new List<string>
+                {
+                    "John", "Jane"
+                }
+            };
+            
+            var identicalAuthoredFontSettings = new AuthoredFontSettings("JoJa", 16)
+            {
+                Authors = new List<string>
+                {
+                    "John", "Jane"
+                }
+            };
+
+            authoredFontSettings.Equals(identicalAuthoredFontSettings).Should().BeTrue();
+        }
+        */
+        
+        /* Shallow Cloning
+        [Fact]
+        public void Cloning_Is_Shallow()
+        {
+            var initialAuthoredFontSettings = new AuthoredFontSettings("JoJa", 16)
+            {
+                Authors = new List<string>
+                {
+                    "John", 
+                    "Jane"
+                }
+            };
+            
+            var enlargedAuthoredFontSettings = initialAuthoredFontSettings with 
+            {
+                Size = 20
+            };
+            
+            initialAuthoredFontSettings.Authors.Add("Alex");
+
+            enlargedAuthoredFontSettings.Family.Should().Be("JoJa");
+            enlargedAuthoredFontSettings.Size.Should().Be(20);
+            
+            enlargedAuthoredFontSettings.Authors.Should().BeEquivalentTo(new[]
+            {
+                "John", "Jane"
+            });
         }
         */
 
