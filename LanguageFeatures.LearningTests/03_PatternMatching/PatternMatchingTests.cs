@@ -12,7 +12,7 @@ namespace LanguageFeatures.LearningTests
         
         /* NOT modifier
         [Fact]
-        public void Support_NotNull_Expression()
+        public void Should_Support_Pattern_Negation_With_NOT()
         {
             var settings = new IdeFontSettings(DefaultFonts.Consolas, DefaultFonts.FiraCode);
 

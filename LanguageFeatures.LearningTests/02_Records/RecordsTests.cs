@@ -36,6 +36,7 @@ namespace LanguageFeatures.LearningTests
             
             settings.Equals(identicalSettings).Should().BeTrue();
             (settings == identicalSettings).Should().BeTrue();
+            (settings != identicalSettings).Should().BeFalse();
         }
         */
 
@@ -56,7 +57,7 @@ namespace LanguageFeatures.LearningTests
 
         /* Deconstructor
         [Fact]
-        public void Should_Have_Synthesized_Destructor()
+        public void Should_Have_Synthesized_Deconstructor()
         {
             var settings = DefaultFonts.Consolas;
 
@@ -69,7 +70,7 @@ namespace LanguageFeatures.LearningTests
         
         /* ToString
         [Fact]
-        public void Should_Have_Synthesize_ToString_Printing_All_Public_Members()
+        public void Should_Have_Synthesized_ToString_Printing_All_Public_Members()
         {
             var settings = DefaultFonts.Consolas;
 

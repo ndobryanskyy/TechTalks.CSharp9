@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using FluentAssertions;
 using Xunit;
 
@@ -12,9 +13,9 @@ namespace LanguageFeatures.LearningTests
     //     {
     //     }
     //
-    //     public Dictionary<string, string> AdditionalAttributes = new Dictionary<string, string>();
-    //     
     //     public List<FontSettings> SupportedFonts { get; } = new List<FontSettings>();
+    //
+    //     public Dictionary<string, string> Registry { get; } = new Dictionary<string, string>();
     // }
 
     public sealed class TargetNewTests
@@ -42,6 +43,27 @@ namespace LanguageFeatures.LearningTests
 
             nonCrossPlatformSettings.Should().BeOfType<VisualStudioSettings>();
             crossPlatformSettings.Should().BeOfType<RiderSettings>();
+        }
+        */
+
+        /* Null coalescing 
+        [Fact]
+        public void Should_Infer_Type_For_Null_Coalescing_Operator()
+        {
+            static FontSettings? GetDefaultFont(RiderSettings riderSettings)
+                => riderSettings.SupportedFonts.FirstOrDefault();
+
+            var settings = new RiderSettings
+            {
+                FontFamily = "Consolas",
+                FontSize = 14
+            };
+
+            var defaultFont = GetDefaultFont(settings);
+
+            defaultFont.Should().NotBeNull();
+            defaultFont.Family.Should().Be("Consolas");
+            defaultFont.Size.Should().Be(14);
         }
         */
 
