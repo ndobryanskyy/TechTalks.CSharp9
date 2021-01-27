@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Newtonsoft.Json;
 using Xunit;
@@ -136,6 +138,20 @@ namespace LanguageFeatures.LearningTests
             consolasDefault.IsItalic.Should().BeFalse();
         }
         */
+        
+        /* Equals implementation caveat:TimestampedFontSettings
+        [Fact]
+        public async Task Synthesized_Equals_Implementation_Checks_All_Fields()
+        {
+            var settings = new TimestampedFontSettings("Consolas", 16);
+
+            await Task.Delay(TimeSpan.FromMilliseconds(100));
+
+            var identicalSettingsCreatedLater = new TimestampedFontSettings("Consolas", 16);
+
+            settings.Equals(identicalSettingsCreatedLater).Should().BeTrue();
+        }
+        */
 
         /* Shallow Equals: AuthoredFontSettings Authors
         [Fact]
@@ -160,7 +176,7 @@ namespace LanguageFeatures.LearningTests
             authoredFontSettings.Equals(identicalAuthoredFontSettings).Should().BeTrue();
         }
         */
-        
+
         /* Shallow Cloning
         [Fact]
         public void Cloning_Is_Shallow()

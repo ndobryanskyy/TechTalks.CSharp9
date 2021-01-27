@@ -10,7 +10,6 @@ namespace LanguageFeatures.LearningTests
     {
         public static TItem MaxBy<TItem, TMember>(this IEnumerable<TItem> source, Func<TItem, TMember> selector)
             where TMember : IComparable<TMember>?
-            where TItem : class
         {
             return source.Aggregate((maxItem, currentItem) =>
             {
