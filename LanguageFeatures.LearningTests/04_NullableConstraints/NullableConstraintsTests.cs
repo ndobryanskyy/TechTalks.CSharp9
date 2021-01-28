@@ -34,7 +34,7 @@ namespace LanguageFeatures.LearningTests
             var fonts = new[] { DefaultFonts.Arial, DefaultFonts.Consolas, DefaultFonts.FiraCode };
 
             var maxFontBySize = fonts.MaxBy(x => x.Size);
-            maxFontBySize.Should().Be(maxFontBySize);
+            maxFontBySize.Should().Be(DefaultFonts.Consolas);
         }
         */
         
