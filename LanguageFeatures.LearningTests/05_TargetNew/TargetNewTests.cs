@@ -6,21 +6,20 @@ using Xunit;
 
 namespace LanguageFeatures.LearningTests
 {
-    // public sealed class RiderSettings : IdeSettings
-    // {
-    //     public RiderSettings() 
-    //         : base(WhitespaceCharacter.Space)
-    //     {
-    //     }
-    //
-    //     public List<FontSettings> SupportedFonts { get; } = new List<FontSettings>();
-    //
-    //     public Dictionary<string, string> Registry { get; } = new Dictionary<string, string>();
-    // }
+    public sealed class RiderSettings : IdeSettings
+    {
+        public RiderSettings() 
+            : base(WhitespaceCharacter.Space)
+        {
+        }
+    
+        public List<FontSettings> SupportedFonts { get; } = new();
+    
+        public Dictionary<string, string> Registry { get; } = new();
+    }
 
     public sealed class TargetNewTests
     {
-        /* Initializer
         [Fact]
         public void Should_Infer_Type_For_Property_With_NonAbstract_Type()
         {
@@ -29,14 +28,12 @@ namespace LanguageFeatures.LearningTests
             settings.SupportedFonts.Should().NotBeNull();
             settings.SupportedFonts.Should().BeOfType<List<FontSettings>>();
         }
-        */
         
-        /* Ternary
         [Fact]
         public void Should_Infer_Type_For_Ternary_Operator()
         {
             static IdeSettings CreateSettings(bool isCrossPlatform)
-                => new VisualStudioSettings();
+                => isCrossPlatform ? new RiderSettings() : new VisualStudioSettings();
 
             var nonCrossPlatformSettings = CreateSettings(false);
             var crossPlatformSettings = CreateSettings(true);
@@ -44,14 +41,13 @@ namespace LanguageFeatures.LearningTests
             nonCrossPlatformSettings.Should().BeOfType<VisualStudioSettings>();
             crossPlatformSettings.Should().BeOfType<RiderSettings>();
         }
-        */
 
-        /* Null coalescing 
         [Fact]
         public void Should_Infer_Type_For_Null_Coalescing_Operator()
         {
-            static FontSettings? GetDefaultFont(RiderSettings riderSettings)
-                => riderSettings.SupportedFonts.FirstOrDefault();
+            static FontSettings GetDefaultFont(RiderSettings riderSettings)
+                => riderSettings.SupportedFonts.FirstOrDefault()
+                    ?? new ExtendedFontSettings(riderSettings.FontFamily, riderSettings.FontSize);
 
             var settings = new RiderSettings
             {
@@ -65,21 +61,17 @@ namespace LanguageFeatures.LearningTests
             defaultFont.Family.Should().Be("Consolas");
             defaultFont.Size.Should().Be(14);
         }
-        */
 
-        /* Arguments
         [Fact]
         public void Should_Infer_Type_For_Arguments()
         {
-            static string StartIde(VisualStudioSettings settings)
+            static string StartIde(RiderSettings settings)
                 => $"Starting with {settings.GetType().Name}";
 
             StartIde(new()).Should().Be("Starting with RiderSettings");
             StartIde(new() { EditorScaling = 200 }).Should().Be("Starting with RiderSettings");
         }
-        */
 
-        /* var
         [Fact]
         public void Is_Reversed_VAR_Alternative()
         {
@@ -91,7 +83,7 @@ namespace LanguageFeatures.LearningTests
                 new()
             };
 
-            (RiderSettings RiderSettings, VisualStudioSettings VsSettings) settingsTuple = new();
+            (RiderSettings RiderSettings, VisualStudioSettings VsSettings) settingsTuple = new(new(), new());
 
             visualStudioSettings.Should().NotBeNull();
 
@@ -102,9 +94,7 @@ namespace LanguageFeatures.LearningTests
             settingsTuple.RiderSettings.Should().NotBeNull();
             settingsTuple.VsSettings.Should().NotBeNull();
         }
-        */
 
-        /* Throw
         [Fact]
         public void Is_Supported_When_Throwing()
         {
@@ -115,6 +105,5 @@ namespace LanguageFeatures.LearningTests
 
             Assert.Throws<Exception>(StopIt);
         }
-        */
     }
 }

@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageFeatures.LearningTests", "LanguageFeatures.LearningTests\LanguageFeatures.LearningTests.csproj", "{9A3102C4-FA6E-401F-808D-9C7BEA23092F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApp", "SampleWebApp\SampleWebApp.csproj", "{D4629C7D-A129-4703-9BC3-C65212BE4B36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{9A3102C4-FA6E-401F-808D-9C7BEA23092F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A3102C4-FA6E-401F-808D-9C7BEA23092F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A3102C4-FA6E-401F-808D-9C7BEA23092F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4629C7D-A129-4703-9BC3-C65212BE4B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4629C7D-A129-4703-9BC3-C65212BE4B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4629C7D-A129-4703-9BC3-C65212BE4B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4629C7D-A129-4703-9BC3-C65212BE4B36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

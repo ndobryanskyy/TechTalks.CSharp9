@@ -24,4 +24,4 @@ If you really liked the topic and want to dive deeper yourself consider visiting
 * Awesome online [Roslyn sandbox](https://sharplab.io/).
 * C# features status on [GitHub](https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md)
 * .NET Foundation [website](https://dotnetfoundation.org/)
-* Help take down JavaScript, join [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) ranks 😀 
+* Help taking down JavaScript, join [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) ranks 😀 
